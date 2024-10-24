@@ -57,7 +57,7 @@ jobs:
           node-version: 20.x
           check-latest: true
           cache: "yarn"
-          cache-dependency-path: "hardhat/yarn.lock"
+          cache-dependency-path: "hardhat/pnpm.lock"
 
       - name: Yarn
         uses: borales/actions-yarn@v5
@@ -65,9 +65,9 @@ jobs:
           cmd: install
           dir: hardhat
 
-      - name: Source .env
-        run: |
-          source .env
+      # - name: Source .env
+      #   run: |
+      #     source .env
 
       - name: Setup Bacalhau
         run: |
