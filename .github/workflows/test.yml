@@ -79,38 +79,41 @@ jobs:
           ./setup bacalhau-serve &
           sleep 10
 
-      - name: Setup Darts Nodes- Mediator, Resource providers...
+      # - name: Setup Darts Nodes- Mediator, Resource providers...
+      #   run: |
+      #     export ADMIN_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export FAUCET_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export FAUCET_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export SOLVER_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export SOLVER_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export MEDIATOR_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export MEDIATOR_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export RESOURCE_PROVIDER_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export RESOURCE_PROVIDER_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export JOB_CREATOR_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export JOB_CREATOR_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+      #     export DIRECTORY_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
+      #     export DIRECTORY_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
+
+      #     export INFURA_KEY=cd97920f485a4ed0b1f7f4bfb447b1dc
+      #     export LOG_LEVEL=info
+      #     export NETWORK=geth
+      #     export NETWORK=sepolia
+
+      #     export WEB3_RPC_URL=wss://sepolia.infura.io/ws/v3/cd97920f485a4ed0b1f7f4bfb447b1dc
+      #     export WEB3_CHAIN_ID=11155111
+
+      #     ./setup balances
+      #     ./setup compile-contracts
+      #     ./setup deploy-contracts
+
+      #     ./setup solver
+      #     sleep 10
+      #     ./setup mediator
+
+      - name: Setup Clean
         run: |
-          export ADMIN_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export FAUCET_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export FAUCET_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export SOLVER_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export SOLVER_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export MEDIATOR_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export MEDIATOR_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export RESOURCE_PROVIDER_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export RESOURCE_PROVIDER_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export JOB_CREATOR_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export JOB_CREATOR_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-          export DIRECTORY_ADDRESS=0x5fbb58c8b15E498442b72E2c8Dad82266ea7e135
-          export DIRECTORY_PRIVATE_KEY=beb00ab9be22a34a9c940c27d1d6bfe59db9ab9de4930c968b16724907591b3f
-
-
-          export INFURA_KEY=cd97920f485a4ed0b1f7f4bfb447b1dc
-          export LOG_LEVEL=info
-          export NETWORK=geth
-          export NETWORK=sepolia
-
-          export WEB3_RPC_URL=wss://sepolia.infura.io/ws/v3/cd97920f485a4ed0b1f7f4bfb447b1dc
-          export WEB3_CHAIN_ID=11155111
-
-          ./setup balances
-          ./setup compile-contracts
-          ./setup deploy-contracts
-
-          ./setup solver 
-          sleep 10
-          ./setup mediator
+          ./setup boot
 
       - name: Test Short
         run: go test -v -run="^Test" -short ./... -timeout 20m
