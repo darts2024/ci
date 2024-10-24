@@ -69,8 +69,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          ref: ${{ github.event.ref }}
+          token: ${{ secrets.TOKEN_GITHUB }}
+          repository: darts2024/darts
+          fetch-depth: 3
+          recursive: true
+          ref: ${{github.ref_name}}
 
       - name: Set up Go
         uses: actions/setup-go@v4
