@@ -1,0 +1,8 @@
+org.opencontainers.image.created=2024-10-24T02:01:06.050Z
+org.opencontainers.image.description=Darts: Gitlab
+org.opencontainers.image.licenses=MIT
+org.opencontainers.image.revision=48221d84c417cbde6a1a486747771aa26db87c64
+org.opencontainers.image.source=https://github.com/darts2024/darts
+org.opencontainers.image.title=darts
+org.opencontainers.image.url=https://github.com/darts2024/darts
+org.opencontainers.image.version=chore-github-workflows-private

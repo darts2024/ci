@@ -1,0 +1,4 @@
+ghcr.io/darts2024/darts:chore-github-workflows-private
+ghcr.io/darts2024/darts:sha-48221d8
+ghcr.io/darts2024/darts.app:chore-github-workflows-private
+ghcr.io/darts2024/darts.app:sha-48221d8
