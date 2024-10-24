@@ -25,6 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
+          repo: darts2024/darts
           fetch-depth: 1
           recursive: true
 
