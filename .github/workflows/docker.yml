@@ -1,14 +1,17 @@
-name: Build
+name: Docker
 
 on:
   push:
     branches:
+      - main
 
     tags:
 
   pull_request:
     branches:
       - main
+  merge_group:
+    types: [checks_requested]
 
   workflow_dispatch:
 
@@ -16,8 +19,14 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  envfile: ${{secrets.ENV}}
+  MODE: test
+  NODE_ENV: testing
+  CONFIG: "./hardhat/.env"
+
 jobs:
-  build:
+  build-docker:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,19 +39,5 @@ jobs:
           recursive: true
           ref: ${{github.ref_name}}
 
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          check-latest: true
-          cache-dependency-path: go.sum
-          cache: true
-          go-version-file: go.mod
-
-      - name: Install dependencies
-        run: go mod download
-
-      - name: Build
-        run: go build -v .
-
-      - name: Build (Race)
-        run: go build -v -race .
+      - name: Build Docker
+        run: docker build .
