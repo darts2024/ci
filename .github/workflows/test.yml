@@ -26,7 +26,7 @@ env:
 
 jobs:
   test:
-    if: false #FIXME: Disable
+    # if: false #FIXME: Disable
     runs-on: ubuntu-latest
 
     steps:
