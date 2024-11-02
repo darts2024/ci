@@ -39,7 +39,7 @@ jobs:
           token: ${{ secrets.TOKEN_GITHUB }}
           repository: darts2024/darts
           fetch-depth: 3
-          recursive: true
+          submodules: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Set up Go
