@@ -46,10 +46,10 @@ jobs:
           #   AAAEBhoOBbyXkSmFpJyMwb0ZLWhqRND60V7q0KLMd/fcc30Fu9Cdv+t+/Q7FAs7gn76+ss
           #   kXyJ2xkFKykWKvaPor9tAAAACXB1YmxpY0tleQECAwQ=
           #   -----END OPENSSH PRIVATE KEY-----
-          persist: true
           fetch-depth: 3
           # submodules: false
           recursive: true
+          //FIXME: invalid word: recursive
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Checkout all submodules
