@@ -38,6 +38,7 @@ jobs:
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
           repository: darts2024/darts
+          ssh-key: "its public"
           fetch-depth: 3
           submodules: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
