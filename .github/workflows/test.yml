@@ -38,14 +38,14 @@ jobs:
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
           repository: darts2024/darts
-          ssh-key: |
-            -----BEGIN OPENSSH PRIVATE KEY-----
-            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-            QyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQAAAJAbMvj9GzL4
-            /QAAAAtzc2gtZWQyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQ
-            AAAEBhoOBbyXkSmFpJyMwb0ZLWhqRND60V7q0KLMd/fcc30Fu9Cdv+t+/Q7FAs7gn76+ss
-            kXyJ2xkFKykWKvaPor9tAAAACXB1YmxpY0tleQECAwQ=
-            -----END OPENSSH PRIVATE KEY-----
+          # ssh-key: |
+          #   -----BEGIN OPENSSH PRIVATE KEY-----
+          #   b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+          #   QyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQAAAJAbMvj9GzL4
+          #   /QAAAAtzc2gtZWQyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQ
+          #   AAAEBhoOBbyXkSmFpJyMwb0ZLWhqRND60V7q0KLMd/fcc30Fu9Cdv+t+/Q7FAs7gn76+ss
+          #   kXyJ2xkFKykWKvaPor9tAAAACXB1YmxpY0tleQECAwQ=
+          #   -----END OPENSSH PRIVATE KEY-----
           persist: true
           fetch-depth: 3
           # submodules: false
