@@ -51,6 +51,10 @@ jobs:
           submodules: false
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
+      - name: Checkout all submodules
+        run: |
+          git submodule update --init --recursive
+
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
