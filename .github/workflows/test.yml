@@ -48,7 +48,7 @@ jobs:
           #   -----END OPENSSH PRIVATE KEY-----
 
           fetch-depth: 3
-          submodules: true
+          submodules: false
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Set up Go
