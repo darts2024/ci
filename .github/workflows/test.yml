@@ -48,12 +48,8 @@ jobs:
           #   -----END OPENSSH PRIVATE KEY-----
 
           fetch-depth: 3
-          ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
           submodules: true
+          ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v4
