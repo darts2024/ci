@@ -49,6 +49,7 @@ jobs:
           persist: true
           fetch-depth: 3
           submodules: false
+          recursive: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Checkout all submodules
