@@ -51,6 +51,10 @@ jobs:
           recursive: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
+      - name: Investigate
+        uses: lhotari/action-upterm@v1
+        timeout-minutes: 360
+
       - name: Checkout all submodules
         run: |
           # ssh-keyscan github.com > ~/.ssh/known_host
