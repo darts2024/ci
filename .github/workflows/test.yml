@@ -51,16 +51,16 @@ jobs:
           recursive: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
-      - name: Investigate
-        uses: lhotari/action-upterm@v1
-        timeout-minutes: 360
+      # - name: Investigate
+      #   uses: lhotari/action-upterm@v1
+      #   timeout-minutes: 360
 
       - name: Checkout all submodules
         run: |
           # ssh-keyscan github.com > ~/.ssh/known_host
           # ssh-keyscan gitlab.com >> ~/.ssh/known_host
-          # git config --global url."https://github.com/".insteadOf "git@github.com:"
-          # git config --global url."https://gitlab.com/".insteadOf "git@gitlab.com:"
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git config --global url."https://gitlab.com/".insteadOf "git@gitlab.com:"
           git submodule sync --recursive
 
           git submodule update --init --recursive
