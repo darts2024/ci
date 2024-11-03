@@ -136,9 +136,9 @@ jobs:
       #     sleep 10
       #     ./setup mediator
 
-      - name: Investigate
-        uses: lhotari/action-upterm@v1
-        timeout-minutes: 360
+      # - name: Investigate
+      #   uses: lhotari/action-upterm@v1
+      #   timeout-minutes: 360
       - name: Setup Clean Boot
         run: |
           ./setup boot
