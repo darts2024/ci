@@ -51,10 +51,6 @@ jobs:
           # submodules: false
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
-      # - name: Investigate
-      #   uses: lhotari/action-upterm@v1
-      #   timeout-minutes: 360
-
       - name: Checkout all submodules
         run: |
           # ssh-keyscan github.com > ~/.ssh/known_host
@@ -140,7 +136,10 @@ jobs:
       #     sleep 10
       #     ./setup mediator
 
-      - name: Setup Clean
+      - name: Investigate
+        uses: lhotari/action-upterm@v1
+        timeout-minutes: 360
+      - name: Setup Clean Boot
         run: |
           ./setup boot
 
