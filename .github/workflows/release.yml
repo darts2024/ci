@@ -32,7 +32,7 @@ jobs:
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
           repository: darts2024/darts
-          recursive: true
+          submodules: false
           #          don't fetch tag for manual flow
           fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-depth: 2
