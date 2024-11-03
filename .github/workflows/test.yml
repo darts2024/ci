@@ -47,8 +47,8 @@ jobs:
           #   kXyJ2xkFKykWKvaPor9tAAAACXB1YmxpY0tleQECAwQ=
           #   -----END OPENSSH PRIVATE KEY-----
           fetch-depth: 3
+          # submodules: true
           # submodules: false
-          recursive: true
           ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       # - name: Investigate
@@ -64,19 +64,6 @@ jobs:
           git submodule sync --recursive
 
           git submodule update --init --recursive
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          submodules: true # This checks out all submodules
-          ssh-key: |
-            -----BEGIN OPENSSH PRIVATE KEY-----
-            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-            QyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQAAAJAbMvj9GzL4
-            /QAAAAtzc2gtZWQyNTUxOQAAACBbvQnb/rfv0OxQLO4J++vrLJF8idsZBSspFir2j6K/bQ
-            AAAEBhoOBbyXkSmFpJyMwb0ZLWhqRND60V7q0KLMd/fcc30Fu9Cdv+t+/Q7FAs7gn76+ss
-            kXyJ2xkFKykWKvaPor9tAAAACXB1YmxpY0tleQECAwQ=
-            -----END OPENSSH PRIVATE KEY-----
 
       - name: Set up Go
         uses: actions/setup-go@v4
