@@ -37,7 +37,7 @@ jobs:
           # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-tags: true
           fetch-depth: 2
-          ref: ${{ github.event.inputs.branch || github.event.ref_name || github.ref_name }}
+          ref: ${{ github.event.inputs.branch || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}
 
       - name: Set up Go
         uses: actions/setup-go@v4
