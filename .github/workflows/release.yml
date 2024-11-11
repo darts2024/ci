@@ -34,7 +34,8 @@ jobs:
           repository: darts2024/darts
           submodules: false
           #          don't fetch tag for manual flow
-          fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
+          # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
+          fetch-tags: true
           fetch-depth: 2
           ref: ${{ github.event.inputs.branch || github.event.ref_name }}
 
