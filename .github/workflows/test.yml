@@ -101,7 +101,7 @@ jobs:
           # configure this to where you want the ipfs data to be stored
           export BACALHAU_SERVE_IPFS_PATH=/tmp/Darts/data/ipfs
           # run bacalhau as both compute node and requester node
-          # ./setup bacalhau-serve &
+          # ./setup bserve &
           # sleep 10
 
       # - name: Setup Darts Nodes- Mediator, Resource providers...
