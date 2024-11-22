@@ -140,6 +140,8 @@ jobs:
       #   uses: lhotari/action-upterm@v1
       #   timeout-minutes: 360
       - name: Setup Clean Boot
+        env:
+          PanicIfResultNotFound: false
         run: |
           ./setup boot
 
