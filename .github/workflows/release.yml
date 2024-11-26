@@ -27,6 +27,13 @@ jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
+      - name: Procure the Tag
+        id: procure-tag
+        run: |
+          tag="${{ github.event.inputs.branch || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}"
+          tag=${tag/v0.0.0-latest/main}
+          tag=${tag/#v0.0.0-br-}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:

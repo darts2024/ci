@@ -44,9 +44,9 @@ jobs:
         run: |
           git tag v0.0.0-latest -f
           git push --tags -f
-          cd ./darts
-          git tag v0.0.0-latest -f
-          git push --tags -f
+          # cd ./darts
+          # git tag v0.0.0-latest -f
+          # git push --tags -f
 
       - name: For Branches
         run: |
@@ -58,14 +58,14 @@ jobs:
           git tag "$BRANCH_NAME" -f
           git push --tags -f   
 
-          cd darts
-          #CUR_TAG=$(git describe --tags --abbrev=0 --match 'v[0-9]*.[0-9]*.[0-9]*' --exclude '*-*')
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          BRANCH_NAME=${BRANCH_NAME//\//-}
-          #BRANCH_NAME="$CUR_TAG-br$BRANCH_NAME"
-          BRANCH_NAME="v0.0.0-br-$BRANCH_NAME"
-          git tag "$BRANCH_NAME" -f
-          git push --tags -f
+          # cd darts
+          # #CUR_TAG=$(git describe --tags --abbrev=0 --match 'v[0-9]*.[0-9]*.[0-9]*' --exclude '*-*')
+          # BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          # BRANCH_NAME=${BRANCH_NAME//\//-}
+          # #BRANCH_NAME="$CUR_TAG-br$BRANCH_NAME"
+          # BRANCH_NAME="v0.0.0-br-$BRANCH_NAME"
+          # git tag "$BRANCH_NAME" -f
+          # git push --tags -f
 
   genr-tags-pr:
     runs-on: ubuntu-latest
