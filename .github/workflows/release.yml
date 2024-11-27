@@ -33,6 +33,9 @@ jobs:
           tag="${{ github.event.inputs.branch || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}"
           tag=${tag/v0.0.0-latest/main}
           tag=${tag/#v0.0.0-br-}
+          echo "tag=$tag" >> $GITHUB_ENV
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+          echo "tag=$tag"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,7 +47,7 @@ jobs:
           # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-tags: true
           fetch-depth: 2
-          ref: ${{ github.event.inputs.branch || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}
+          ref: ${{ steps.procure-tag.outputs.tag }}"
 
       - name: Set up Go
         uses: actions/setup-go@v4
