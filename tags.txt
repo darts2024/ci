@@ -1,6 +1,6 @@
-ghcr.io/darts2024/darts:main
-ghcr.io/darts2024/darts:latest
-ghcr.io/darts2024/darts:sha-e0e8bd6
-ghcr.io/darts2024/darts.app:main
-ghcr.io/darts2024/darts.app:latest
-ghcr.io/darts2024/darts.app:sha-e0e8bd6
+ghcr.io/darts2024/darts:0.24.0-gamma-trigger-tags
+ghcr.io/darts2024/darts:v0.24.0-gamma-trigger-tags
+ghcr.io/darts2024/darts:sha-24875a3
+ghcr.io/darts2024/darts.app:0.24.0-gamma-trigger-tags
+ghcr.io/darts2024/darts.app:v0.24.0-gamma-trigger-tags
+ghcr.io/darts2024/darts.app:sha-24875a3
