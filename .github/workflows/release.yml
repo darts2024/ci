@@ -31,10 +31,11 @@ jobs:
         id: procure-tag
         run: |
           tag="${{ github.event.inputs.branch || github.event.ref_name == 'dev' && 'main' || github.ref_name == 'dev' && 'main' || github.ref_name }}"
-          tag=${tag/v0.0.0-latest/main}
-          tag=${tag/#v0.0.0-br-}
-          echo "tag=$tag" >> $GITHUB_ENV
-          echo "tag=$tag" >> $GITHUB_OUTPUT
+          ref=${tag/v0.0.0-latest/main}
+          ref=${ref/#v0.0.0-br-}
+          # echo "ref=$ref" >> $GITHUB_ENV
+          echo "ref=$ref" >> $GITHUB_OUTPUT
+          echo "ref=$ref"
           echo "tag=$tag"
 
       - name: Checkout
@@ -47,7 +48,7 @@ jobs:
           # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-tags: true
           fetch-depth: 2
-          ref: ${{ steps.procure-tag.outputs.tag }}
+          ref: ${{ steps.procure-tag.outputs.ref }}
 
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -70,6 +71,7 @@ jobs:
         id: vars
         run: |
           #echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+          git tag -a ${{steps.procure-tag.outputs.tag}} -m "ci: branch ${{steps.procure-tag.outputs.ref}}" || echo "tag exists"
           echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
 
       - uses: nowsprinting/check-version-format-action@v4
