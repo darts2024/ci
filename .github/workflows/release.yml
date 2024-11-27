@@ -30,7 +30,7 @@ jobs:
       - name: Procure the Tag
         id: procure-tag
         run: |
-          tag="${{ github.event.inputs.branch || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}"
+          tag="${{ github.event.inputs.branch || github.event.ref_name == 'dev' && 'main' || github.ref_name == 'dev' && 'main' || github.ref_name }}"
           tag=${tag/v0.0.0-latest/main}
           tag=${tag/#v0.0.0-br-}
           echo "tag=$tag" >> $GITHUB_ENV
@@ -63,7 +63,7 @@ jobs:
       - name: Tag
         if: github.event_name == 'workflow_dispatch'
         run: |
-          git tag -a ${{ github.event.inputs.tag }} -m "${{ github.event.inputs.tag }}"
+          git tag -a ${{ github.event.inputs.tag }} -m "${{ github.event.inputs.message }}"
           echo "Tag ${{ github.event.inputs.tag }}"
 
       - name: Set Tag output
