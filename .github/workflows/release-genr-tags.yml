@@ -19,6 +19,7 @@ jobs:
   genr-tags-branch:
     runs-on: ubuntu-latest
     #    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/release/')
+    if: github.ref_name != 'release-tags'
 
     steps:
       - name: Checkout
