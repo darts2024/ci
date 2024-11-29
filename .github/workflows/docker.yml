@@ -2,8 +2,12 @@ name: Docker
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
+
+    branches-ignore:
+      - "release-tags"
+      - "dev"
 
     tags:
       - "**"
