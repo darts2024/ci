@@ -12,9 +12,6 @@ on:
       - "**"
       - "ci/*"
 
-    branches-ignore:
-      - "release-tags"
-
 permissions:
   contents: write
 
