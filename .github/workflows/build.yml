@@ -3,8 +3,12 @@ name: Build
 on:
   push:
     branches:
-
+      - main
+    branches-ignore:
+      - "release-tags"
     tags:
+      - "*"
+      - "**"
 
   pull_request:
     branches:
