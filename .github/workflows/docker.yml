@@ -24,7 +24,6 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  envfile: ${{secrets.ENV}}
   MODE: test
   NODE_ENV: testing
   CONFIG: "./hardhat/.env"
