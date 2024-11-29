@@ -30,7 +30,7 @@ jobs:
       - name: Procure the Tag
         id: procure-tag
         run: |
-          tag="${{ github.event.inputs.branch || github.event.ref_name == 'dev' && 'main' || github.ref_name == 'dev' && 'main' || github.ref_name }}"
+          tag="${{ github.event.inputs.branch || github.event.ref_name == 'dev' && 'main' || github.event.ref_name || github.ref_name == 'dev' && 'main' || github.ref_name }}"
           ref=${tag/v0.0.0-latest/main}
           ref=${ref/#v0.0.0-br-}
           # echo "ref=$ref" >> $GITHUB_ENV
