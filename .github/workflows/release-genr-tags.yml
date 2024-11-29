@@ -3,14 +3,9 @@ name: Release Genr Tags
 on:
   pull_request:
   push:
-    branches:
-      - main
-      - release/*
-      - feat/*
-      - feature/*
-      - "*"
-      - "**"
-      - "ci/*"
+    branches-ignore:
+      - "release-tags"
+      - "dev"
 
 permissions:
   contents: write
