@@ -1,6 +1,8 @@
-ghcr.io/darts2024/darts:main
-ghcr.io/darts2024/darts:latest
-ghcr.io/darts2024/darts:sha-e0e8bd6
-ghcr.io/darts2024/darts.app:main
-ghcr.io/darts2024/darts.app:latest
-ghcr.io/darts2024/darts.app:sha-e0e8bd6
+ghcr.io/darts2024/darts:ci-ghcr-push
+ghcr.io/darts2024/darts:sha-a648d79
+ghcr.io/darts2024/darts.app:ci-ghcr-push
+ghcr.io/darts2024/darts.app:sha-a648d79
+ghcr.io/decenterai-1/darts.app:ci-ghcr-push
+ghcr.io/decenterai-1/darts.app:sha-a648d79
+ghcr.io/decenterai-1/darts:ci-ghcr-push
+ghcr.io/decenterai-1/darts:sha-a648d79
