@@ -1,6 +1,8 @@
-ghcr.io/darts2024/darts:main
-ghcr.io/darts2024/darts:latest
-ghcr.io/darts2024/darts:sha-e0e8bd6
-ghcr.io/darts2024/darts.app:main
-ghcr.io/darts2024/darts.app:latest
-ghcr.io/darts2024/darts.app:sha-e0e8bd6
+ghcr.io/darts2024/darts:feat-splice-rp-offers
+ghcr.io/darts2024/darts:sha-2155f0a
+ghcr.io/darts2024/darts.app:feat-splice-rp-offers
+ghcr.io/darts2024/darts.app:sha-2155f0a
+ghcr.io/decenterai-1/darts.app:feat-splice-rp-offers
+ghcr.io/decenterai-1/darts.app:sha-2155f0a
+ghcr.io/decenterai-1/darts:feat-splice-rp-offers
+ghcr.io/decenterai-1/darts:sha-2155f0a
