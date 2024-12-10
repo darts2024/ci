@@ -1,6 +1,8 @@
-ghcr.io/darts2024/darts:main
-ghcr.io/darts2024/darts:latest
-ghcr.io/darts2024/darts:sha-e0e8bd6
-ghcr.io/darts2024/darts.app:main
-ghcr.io/darts2024/darts.app:latest
-ghcr.io/darts2024/darts.app:sha-e0e8bd6
+ghcr.io/darts2024/darts:hotfix-solver-not-negotiating
+ghcr.io/darts2024/darts:sha-bdab49e
+ghcr.io/darts2024/darts.app:hotfix-solver-not-negotiating
+ghcr.io/darts2024/darts.app:sha-bdab49e
+ghcr.io/decenterai-1/darts.app:hotfix-solver-not-negotiating
+ghcr.io/decenterai-1/darts.app:sha-bdab49e
+ghcr.io/decenterai-1/darts:hotfix-solver-not-negotiating
+ghcr.io/decenterai-1/darts:sha-bdab49e
