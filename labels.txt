@@ -1,8 +1,8 @@
-org.opencontainers.image.created=2024-11-02T15:24:49.096Z
+org.opencontainers.image.created=2024-12-25T02:41:03.226Z
 org.opencontainers.image.description=Darts: Gitlab
 org.opencontainers.image.licenses=MIT
-org.opencontainers.image.revision=e0e8bd6cbc799d883f34a2c7a2c6f55b86cc1e22
+org.opencontainers.image.revision=aab6a5687fe08d8c6ea1e1e5b170e73e216e4c93
 org.opencontainers.image.source=https://github.com/darts2024/darts
 org.opencontainers.image.title=darts
 org.opencontainers.image.url=https://github.com/darts2024/darts
-org.opencontainers.image.version=main
+org.opencontainers.image.version=0.706.2
