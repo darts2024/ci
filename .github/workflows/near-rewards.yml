@@ -31,8 +31,46 @@ jobs:
           GITHUB_REPO: ${{ github.repository_owner }}/hardhat
         run: npx near-protocol-rewards calculate    
         
-      - name: Calculate Rewards darts
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
-          GITHUB_REPO: darts2024/darts
-        run: npx near-protocol-rewards calculate
+      # - name: Calculate Rewards darts
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+      #     GITHUB_REPO: darts2024/darts
+      #   run: npx near-protocol-rewards calculate
+
+  
+  calc-2:
+      
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN_GITHUB }}
+          repository: darts2024/darts
+          fetch-depth: 3
+          # submodules: true
+          # submodules: false
+          ref: ${{ github.ref_name == 'dev' && 'main' || github.ref_name }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Checkout all submodules
+        run: |
+          # ssh-keyscan github.com > ~/.ssh/known_host
+          # ssh-keyscan gitlab.com >> ~/.ssh/known_host
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git config --global url."https://gitlab.com/".insteadOf "git@gitlab.com:"
+          git submodule sync --recursive
+
+          git submodule update --init --recursive
+          
+      - name: Caculate near
+        run: |
+          git submodule foreach --recursive 'npx near-protocol-rewards calculate || echo "Failed in $name"'
+      
+
+
