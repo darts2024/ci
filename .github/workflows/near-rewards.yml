@@ -25,11 +25,11 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
         run: npx near-protocol-rewards calculate       
         
-      - name: Calculate Rewards hardhat
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPO: ${{ github.repository_owner }}/hardhat
-        run: npx near-protocol-rewards calculate    
+      # - name: Calculate Rewards hardhat
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GITHUB_REPO: ${{ github.repository_owner }}/hardhat
+      #   run: npx near-protocol-rewards calculate    
         
       # - name: Calculate Rewards darts
       #   env:
