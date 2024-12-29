@@ -69,8 +69,17 @@ jobs:
           git submodule update --init --recursive
           
       - name: Caculate near
+        env: 
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: |
-          git submodule foreach --recursive 'npx near-protocol-rewards calculate || echo "Failed in $name"'
+          git submodule foreach --recursive '
+            echo "Submodule: $name"
+            remote_url=$(git config --get remote.origin.url)
+            GITHUB_REPO=$(echo "$remote_url" | sed -E "s#.*[:/]([^/]+)/([^/]+)\.git#\1/\2#" | sed "s#^darts-network/#darts2024/#")
+            echo "Running in submodule $GITHUB_REPO"
+            export GITHUB_REPO=$GITHUB_REPO
+            npx near-protocol-rewards calculate || echo "Failed in $name"
+          '
       
 
 
