@@ -54,7 +54,7 @@ jobs:
           #          don't fetch tag for manual flow
           # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-tags: true
-          # fetch-depth:
+          fetch-depth: 100
           ref: ${{ steps.procure-tag.outputs.ref }}
 
       - name: Set up Go
