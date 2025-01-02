@@ -115,6 +115,13 @@ jobs:
           echo "Args is $args"
           echo "args=$args" >> $GITHUB_OUTPUT
 
+      - name: Remove release if it exists
+        continue-on-error: true
+        env: 
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        run: |
+          gh release delete ${{ steps.vars.output.tag }} -y 
+
       - name: Run GoReleaser
         # continue-on-error: true
         uses: goreleaser/goreleaser-action@v5
