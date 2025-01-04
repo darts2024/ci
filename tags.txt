@@ -1,6 +1,8 @@
-ghcr.io/darts2024/darts:main
-ghcr.io/darts2024/darts:latest
-ghcr.io/darts2024/darts:sha-e0e8bd6
-ghcr.io/darts2024/darts.app:main
-ghcr.io/darts2024/darts.app:latest
-ghcr.io/darts2024/darts.app:sha-e0e8bd6
+ghcr.io/darts2024/darts:docker-scratch
+ghcr.io/darts2024/darts:sha-9840343
+ghcr.io/darts2024/darts.app:docker-scratch
+ghcr.io/darts2024/darts.app:sha-9840343
+ghcr.io/decenterai-1/darts.app:docker-scratch
+ghcr.io/decenterai-1/darts.app:sha-9840343
+ghcr.io/decenterai-1/darts:docker-scratch
+ghcr.io/decenterai-1/darts:sha-9840343
