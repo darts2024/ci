@@ -16,7 +16,7 @@ jobs:
     #    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/release/')
     # if: github.ref_name != 'release-tags'
     if: false 
-    # already taken care of in 
+    # already taken care of in darts repo
     steps:
       - name: Checkout
         uses: actions/checkout@v4
