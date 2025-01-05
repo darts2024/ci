@@ -29,12 +29,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref_name }}
   cancel-in-progress: true
 
 jobs:
   goreleaser:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Procure the Tag
         id: procure-tag
