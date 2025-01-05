@@ -59,7 +59,19 @@ jobs:
           # fetch-tags: ${{ github.event_name != 'workflow_dispatch' }}
           fetch-tags: true
           fetch-depth: 100
-          ref: ${{ steps.procure-tag.outputs.ref }}
+          ref: ${{ steps.procure-tag.outputs.ref }}     
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN_GITHUB }}
+          persist-credentials: true
+          repository: DeCenterAI-1/darts
+          submodules: false
+          fetch-tags: true
+          fetch-depth: 100
+          ref: main
+          path: "./releases"
 
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -117,6 +129,7 @@ jobs:
 
       - name: Remove release if it exists
         continue-on-error: true
+        working-directory: "./releases"
         env: 
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: |
