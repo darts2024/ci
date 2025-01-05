@@ -71,7 +71,7 @@ jobs:
           fetch-tags: true
           fetch-depth: 100
           ref: main
-          path: "./releases"
+          path: "../releases"
 
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -129,7 +129,7 @@ jobs:
 
       - name: Remove release if it exists
         continue-on-error: true
-        working-directory: "./releases"
+        working-directory: "../releases"
         env: 
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: |
