@@ -34,7 +34,7 @@ concurrency:
 
 jobs:
   goreleaser:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Procure the Tag
         id: procure-tag
