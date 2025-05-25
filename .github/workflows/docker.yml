@@ -45,3 +45,6 @@ jobs:
 
       - name: Build Docker
         run: docker build .
+
+      - name: Build Docker RP
+        run: docker build -f rp.Dockerfile -t darts-rp .
