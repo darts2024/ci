@@ -1,4 +1,4 @@
-name: Publish to GCR
+name: Publish Darts RP to GCR
 on:
   push:
     branches:
@@ -109,34 +109,29 @@ jobs:
         id: tags
         uses: jaywcjlove/github-action-read-file@main
         with:
-          path: tags.txt
+          path: tags-rp.txt
 
       - name: Read labels
         id: labels
         uses: jaywcjlove/github-action-read-file@main
         with:
-          path: labels.txt
+          path: labels-rp.txt
 
       - name: Actor
         run: |
           echo ${{github.actor}}
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image for rp
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: rp.Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          # push: true
-          tags: ${{ steps.tags.outputs.content }}
-          labels: ${{ steps.labels.outputs.content}}
-          github-token: ${{github.token}} #make sure to update permissions for repo in github package settings
-          # cache-from: type=registry,ref=user/app:latest
-          # cache-to: type=inline
-          # cache-from: type=registry,ref=user/app:buildcache
-          # cache-to: type=registry,ref=user/app:buildcache,mode=max
-          cache-from: type=gha #Don't use cuz of cache limits our image size is way bigger than 10GB
-          cache-to: type=gha,mode=max
 
-          # cache-from: type=local,src=/tmp/.buildx-cache
-          # cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=min
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels}}
+          github-token: ${{ github.token }}
+
+          cache-from: type=gha
+          cache-to: type=gha,mode=ma
