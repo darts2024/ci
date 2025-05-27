@@ -129,8 +129,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
 
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels}}
+          tags: ${{ steps.tags.outputs.content }}
+          labels: ${{ steps.labels.outputs.content}}
           github-token: ${{ github.token }}
 
           cache-from: type=gha
