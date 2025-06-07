@@ -1,6 +1,9 @@
-ghcr.io/darts2024/rp:main
-ghcr.io/darts2024/rp:sha-9d4da15
-ghcr.io/darts2024/darts-rp:main
-ghcr.io/darts2024/darts-rp:sha-9d4da15
-ghcr.io/darts2024/dartsrp:main
-ghcr.io/darts2024/dartsrp:sha-9d4da15
+ghcr.io/darts2024/rp:0.901.0-alpha
+ghcr.io/darts2024/rp:v0.901.0-alpha
+ghcr.io/darts2024/rp:sha-1c90a85
+ghcr.io/darts2024/darts-rp:0.901.0-alpha
+ghcr.io/darts2024/darts-rp:v0.901.0-alpha
+ghcr.io/darts2024/darts-rp:sha-1c90a85
+ghcr.io/darts2024/dartsrp:0.901.0-alpha
+ghcr.io/darts2024/dartsrp:v0.901.0-alpha
+ghcr.io/darts2024/dartsrp:sha-1c90a85
