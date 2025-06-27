@@ -1,6 +1,6 @@
-ghcr.io/darts2024/rp:main
-ghcr.io/darts2024/rp:sha-9d4da15
-ghcr.io/darts2024/darts-rp:main
-ghcr.io/darts2024/darts-rp:sha-9d4da15
-ghcr.io/darts2024/dartsrp:main
-ghcr.io/darts2024/dartsrp:sha-9d4da15
+ghcr.io/darts2024/rp:feat-support-concurrency-for-git-with-clones
+ghcr.io/darts2024/rp:sha-cd3ef87
+ghcr.io/darts2024/darts-rp:feat-support-concurrency-for-git-with-clones
+ghcr.io/darts2024/darts-rp:sha-cd3ef87
+ghcr.io/darts2024/dartsrp:feat-support-concurrency-for-git-with-clones
+ghcr.io/darts2024/dartsrp:sha-cd3ef87
